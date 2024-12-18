@@ -1,0 +1,317 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: rgb(46, 46, 46);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: rgb(218, 171, 83);
+    text-align: center;
+    padding: 2%;
+    color: rgb(199, 62, 62);
+    text-shadow: -5px 5px rgb(20, 20, 20);
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: larger;
+    font-weight: weight;
+    font-style: normal;
+}
+
+table {
+    align-self: center;
+    margin-top: 3%;
+    border: solid 2px black;
+    background:rgb(20, 20, 20);
+    border-spacing: 3px;
+}
+
+table td {
+    border: solid 2px black;
+}
+
+td {
+    position: relative;
+    width: 200px;
+    max-width: 200px;
+    background: rgb(46, 46, 46);
+    overflow: hidden;
+}
+
+div:not(.contenedorSeleccion, .contenedorSeleccion div, .textos, .mensajePelea, .decorativo){
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+td:has(div:is(.seleccionadoJ2)){
+    border: solid 2px rgb(255, 237, 134);
+    display: inline-block;
+}
+
+td:has(div:is(.seleccionadoJ2)) > div{
+    display: block;
+}
+
+td:has(div:is(.seleccionadoJ2)) > div > .seleccionador{
+    background: rgba(0, 0, 0, 0.600);
+    position: relative;
+    z-index: 4;
+}
+
+td:hover{ border: solid 2px rgb(255, 237, 134); background:rgb(255, 228, 72);}
+
+td img:is(.cloud,.link){
+    position: relative;
+    width: 400px;
+    right: 45px;
+}
+
+td img:is(.crash){
+    position: relative;
+    width: 180px;
+    left: 20px;
+    top: 10px;
+}
+
+td img:is(.rayman){
+    position: relative;
+    width: 360px;
+    right: 60px;
+}
+
+td img:is(.kirby){
+    position: relative;
+    width: 200px;
+    top: 45px;
+}
+
+td img:is(.sora){
+    position: relative;
+    width: 270px;
+    right: 65px;
+}
+
+td img:is(.sephiroth){
+    position: relative;
+    width: 560px;
+    right: 45px;
+    bottom: 200px;
+    z-index: 0;
+}
+
+td img:is(.spyro){
+    position: relative;
+    width: 360px;
+    right: 10px;
+}
+
+td img:is(.toad){
+    position: relative;
+    width: 250px;
+    top: 30px;
+    right: 20px;
+}
+
+td img:is(.sly){
+    position: relative;
+    width: 300px;
+    right: 60px;
+    top: 30px;
+}
+
+div:is(.contenedorSeleccion){
+    display: flex;
+    margin-top: 1%;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+}
+
+div:is(.contenedorSeleccion) > div{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    display: block;
+}
+
+.personajeJ2 div:is(.sombra){
+    position: relative;
+    background: black;
+    width: 300px;
+    height: 50px;
+    bottom: 25px;
+    z-index: 3;
+    border-radius: 100%;
+}
+
+.personajeJ1 div:is(.sombra){
+    position: relative;
+    background: black;
+    width: 300px;
+    height: 50px;
+    top: 269px;
+    z-index: 2;
+    border-radius: 100%;
+}
+
+div:is(.contenedorSeleccion) .personajeJ2 img{
+    width: 500px;
+    position: relative;
+    z-index: 4;
+}
+
+div:is(.contenedorSeleccion) .personajeJ1 img{
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    z-index: 4;
+}
+
+div:is(.contenedorSeleccion) > .personajeJ1{
+    border: 10px solid rgb(0, 132, 255);
+}
+
+div:is(.contenedorSeleccion) > .personajeJ1 *{
+   visibility: hidden;
+}
+
+div:is(.contenedorSeleccion) > .personajeJ2{
+    border: 10px solid rgb(255, 60, 0);
+    margin-left: 5%;
+}
+
+table:has(tr td:hover) ~ .contenedorSeleccion > .personajeJ1 > .sombra {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(1) td:nth-child(1):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(1) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(1) td:nth-child(2):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(2) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(1) td:nth-child(3):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(3) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(1) td:nth-child(4):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(4) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(1) td:nth-child(5):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(5) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(2) td:nth-child(1):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(6) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(2) td:nth-child(2):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(7) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(2) td:nth-child(3):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(8) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(2) td:nth-child(4):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(9) {
+    visibility: visible;
+}
+
+table:has(tr:nth-child(2) td:nth-child(5):hover) ~ .contenedorSeleccion > .personajeJ1 > img:nth-child(10) {
+    visibility: visible;
+}
+
+div:is(.textos){
+    display: flex;
+    margin-top: 1%;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: larger;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.textos p:is(.player2){
+    margin-left: 18%;
+    color: rgb(255, 60, 0);
+}
+
+.textos p:is(.player1){
+    color: rgb(0, 132, 255);
+}
+
+div:is(.start){
+    display: flex;
+    margin-top: 1%;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    color: rgb(199, 62, 62);
+    text-shadow: -5px 5px rgb(218, 171, 83);
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-size: larger;
+    font-style: normal;
+}
+
+div:is(.start):active{
+    color: rgb(255, 84, 84);
+    text-shadow: none;
+}
+
+body:has(div:is(.start) > p:active) div:is(.contenedorSeleccion) > .personajeJ1 .cloud{
+    visibility: visible;
+}
+
+body:has(div:is(.start) > p:active) div:is(.mensajePelea){
+    visibility: visible;
+}
+
+.mensajePelea {
+    position: relative;
+    overflow: hidden;
+    visibility: hidden;
+    bottom: 800px;
+    max-height: 350px;
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: rgb(255, 237, 134);
+    text-shadow: -5px 10px black;
+    text-align: center;
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 150px;
+    font-weight: weight;
+    font-style: normal;
+    background: rgb(218, 171, 83);
+}
+
+.mensajePelea p {
+    position: relative;
+    top: 180px;
+    z-index: 10;
+}
+
+
+.decorativo {
+    position: relative;
+    background: rgb(199, 62, 62);
+    padding: 10%;
+    top: 20px;
+    right: 550px;
+    width: 14000px;
+    border-radius: 90%;
+}
